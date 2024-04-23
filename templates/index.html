@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Онлайн магазин</title>
+{% endblock %}
+
+{% block body%}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal text-body-emphasis">Автомобили</h1>
+    <p class="fs-5 text-body-secondary">Перед вами широкий выбор автомобилей на любой бюджет, среди которых вы найдете
+        своего идеального железного коня. </p>
+</div>
+</header>
+
+<main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {% for el in data %}
+        <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">{{ el.price}}<small class="text-body-secondary fw-light">рублей</small>
+                    </h1>
+                    <p>{{ el.image }}</p>
+                    <p>{{ el.description}}</p>
+                    <a href="/buy/{{ el.id }}" class="w-100 btn btn-lg btn-outline-primary">Приобрести</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+    <!--    <div class="col">-->
+    <!--        <div class="card mb-4 rounded-3 shadow-sm">-->
+    <!--            <div class="card-header py-3">-->
+    <!--                <h4 class="my-0 fw-normal">Pro</h4>-->
+    <!--            </div>-->
+    <!--            <div class="card-body">-->
+    <!--                <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small>-->
+    <!--                </h1>-->
+    <!--                <ul class="list-unstyled mt-3 mb-4">-->
+    <!--                    <li>20 users included</li>-->
+    <!--                    <li>10 GB of storage</li>-->
+    <!--                    <li>Priority email support</li>-->
+    <!--                    <li>Help center access</li>-->
+    <!--                </ul>-->
+    <!--                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="col">-->
+    <!--        <div class="card mb-4 rounded-3 shadow-sm border-primary">-->
+    <!--            <div class="card-header py-3 text-bg-primary border-primary">-->
+    <!--                <h4 class="my-0 fw-normal">Enterprise</h4>-->
+    <!--            </div>-->
+    <!--            <div class="card-body">-->
+    <!--                <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small>-->
+    <!--                </h1>-->
+    <!--                <ul class="list-unstyled mt-3 mb-4">-->
+    <!--                    <li>30 users included</li>-->
+    <!--                    <li>15 GB of storage</li>-->
+    <!--                    <li>Phone and email support</li>-->
+    <!--                    <li>Help center access</li>-->
+    <!--                </ul>-->
+    <!--                <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    </div>-->
+
+    <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom">Новости автопрома</h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div style="background-image: url('https://s0.rbk.ru/v6_top_pics/resized/1280xH/media/img/2/97/347135301572972.webp');">
+                    <div class="background-container1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: white;">В США начались продажи
+                            кабриолета
+                            Mercedes-Benz CLE</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="background-image: url('https://s0.rbk.ru/v6_top_pics/resized/673xH/media/img/5/44/347134499534445.webp');">
+                    <div class="background-container2">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: white;">Дилеры назвали
+                            российские цены на только что
+                            представленный Lixiang L6</h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div style="background-image: url('https://s0.rbk.ru/v6_top_pics/resized/673xH/media/img/7/91/347133663561917.webp');">
+                    <div class="background-container3">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="color: white;">Стартовали продажи
+                                новой Toyota Camry</h3>
+                            <ul class="d-flex list-unstyled mt-auto">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+{% endblock %}
