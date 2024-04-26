@@ -7,16 +7,16 @@
 {% block body%}
 <div class="container">
     <h1>Добавление авто</h1>
-    <form method="post">
-      <input type="text" class="form-control" name="title" id="title" placeholder="Введите название"><br>
+    <form action="{{url_for('create')}}" method="post">
+        <input type="text" class="form-control" name="title" id="title" placeholder="Введите название"><br>
         <input type="text" class="form-control" name="description" id="description" placeholder="Введите описание"><br>
         <input type="number" class="form-control" name="price" id="price" placeholder="Введите цену"><br>
         <button class="btn btn-success" type="submit">Добавить товар</button>
-        <form enctype="multipart/form-data">
-            <a href="{{ url_for('upload_image') }}"><input type='file' name="image"></input></a>
+<!--        <form id = "pict_form" action="index.html" method="post" enctype="multipart/form-data">-->
+<!--            <input name="image" type = "file">-->
         </form>
-
     </form>
+
 </div>
 {% endblock %}
 s

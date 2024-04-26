@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-form">
+        <h2>Регистрация</h2>
+        {% for key, value in get_flashed_messages(True) %}
+        <div class="flash {{ key }}">{{value}}</div>
+        {% endfor %}
+        <form action="/register" method="post">
+            <input type="text" name="name" placeholder="Имя пользователя" required>
+            <input type="text" name="email" placeholder="email" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <p>Повтор пароля:<input type="password" name="password_confirm" placeholder="Пароль" required></p>
+            <button  type="submit">Зарегестрироваться</button>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
